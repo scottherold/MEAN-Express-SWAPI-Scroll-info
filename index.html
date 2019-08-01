@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="/css/style.css" tyle="stylesheet/css"> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready( () => { // on load
+                $('#peopleBtn').click( () => { // when the designated id is clicked
+                    $.get('http://swapi.co/api/people', (data) => { // API call
+                        console.log("got the data", data);// log the data to be sure we have it before we dive into manipulating the DOM
+                    }, 'json'); // callback designates JSON object
+                });
+            });
+        </script>
+        <title>Star Wars API</title>
+    </head>
+    <body>
+        <button id="peopleBtn">People</button>
+    </body>
+</html>
